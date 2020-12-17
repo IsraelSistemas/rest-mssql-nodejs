@@ -62,7 +62,7 @@ class sqlRest {
         }
 
         return await request.query(queryString).then(res => {
-            return this.#handleResponse(res.recordset);           
+            return this.#handleResponse(res.recordsets);           
         }).catch(err => {
             return this.#handleResponse(null, err);            
         });
@@ -74,7 +74,7 @@ class sqlRest {
         }
         schema = schema || 'dbo';
 
-        const request = await this.#pool.request();
+        const request = await this.#pool.request();        
         const paramsProcedure = await this.#getProcedureParams(schema, storedProcedure);
 
         for (let param in paramsData) {
@@ -93,8 +93,8 @@ class sqlRest {
             }
         }        
                 
-        return request.execute(`${schema}.${storedProcedure}`).then(res => {            
-            return this.#handleResponse(res.recordset);            
+        return request.execute(`${schema}.${storedProcedure}`).then(res => {
+            return this.#handleResponse(res.recordsets);
         }).catch(err => {   
             return this.#handleResponse(null, err);            
         });
@@ -250,7 +250,7 @@ class sqlRest {
         return defaultValue;
     }
 
-    #handleResponse = (data, error) => {               
+    #handleResponse = (data, error) => {        
         let response = {
             success: !error ? true: false,
             error: error ? true : false,
