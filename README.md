@@ -6,6 +6,7 @@
   - Execute queries with/without parameters and get the data
   - Get all parameters of a procedure with each data type only for fill
   - Execute stored procedures with/without parameters and get the data
+  - Allow retrieve one or multiple result sets
 
 
 
