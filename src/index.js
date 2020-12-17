@@ -249,4 +249,4 @@ class sqlRest {
     }
 }
 
-exports.module = sqlRest;
+module.exports = sqlRest;
