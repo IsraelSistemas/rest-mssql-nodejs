@@ -79,10 +79,10 @@ console.log("QUERY RESULT: ", result.data);
 //----------
 
 // how to execute a stored procedure without parameters
-const result = await rest.executeStoredProcedure(null, 'spName');
+const result = await rest.executeStoredProcedure('spName');
 
 // how to execute a stored procedure with parameters
-const result = await rest.executeStoredProcedure(null, 'spName', {
+const result = await rest.executeStoredProcedure('spName', null, {
     id: 1
 });
 
