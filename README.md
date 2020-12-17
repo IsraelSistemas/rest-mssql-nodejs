@@ -17,16 +17,17 @@ $ npm install --save rest-mssql-nodejs
 ```
 
 ### Methods
-| executeQuery \(queryString, paramsData\) |                                                                       |                                                      |   |
-|------------------------------------------|-----------------------------------------------------------------------|------------------------------------------------------|---|
-| Parameter1: queryString                  | Query is going to be executed                                         | Example: select \* from your\_table                  |   |
-| Parameter2: paramsData \(optional\)      | Array of objects with the property: value is going to fill the params | Example: \[\{ name: 'id', type: 'Int', value: 1 \}\] |   |
+| executeQuery \\\(queryString, paramsData\\\) |                                                                       |                                                              |
+|----------------------------------------------|-----------------------------------------------------------------------|--------------------------------------------------------------|
+| Parameter1: queryString                      | Query is going to be executed                                         | Example: select \\\* from your\\\_table                      |
+| Parameter2: paramsData \\\(optional\\\)      | Array of objects with the property: value is going to fill the params | Example: \\\[\\\{ name: 'id', type: 'Int', value: 1 \\\}\\\] |
 
-| executeStoredProcedure \(storedProcedure, schema, paramsData\) |                                                                         |                      |   |
-|----------------------------------------------------------------|-------------------------------------------------------------------------|----------------------|---|
-| Parameter1: storedProcedure                                    | The stored procedure name you want to execute                           |                      |   |
-| Parameter2: schema \(optional\)                                | If you are using a different schema, specify it here                    |                      |   |
-| Parameter3: paramsData \(optional\)                            | Object with the property: value as your stored procedure is waiting for | Example: \{ id: 1 \} |   |
+
+| executeStoredProcedure \\\(storedProcedure, schema, paramsData\\\) |                                                                         |                          |
+|--------------------------------------------------------------------|-------------------------------------------------------------------------|--------------------------|
+| Parameter1: storedProcedure                                        | The stored procedure name you want to execute                           |                          |
+| Parameter2: schema \\\(optional\\\)                                | If you are using a different schema, specify it here                    |                          |
+| Parameter3: paramsData \\\(optional\\\)                            | Object with the property: value as your stored procedure is waiting for | Example: \\\{ id: 1 \\\} |
 
 
 ### Usage
