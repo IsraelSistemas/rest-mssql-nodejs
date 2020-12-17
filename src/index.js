@@ -71,7 +71,7 @@ class sqlRest {
         });
     }
 
-    async executeStoredProcedure(schema = null, storedProcedure, paramsData) {
+    async executeStoredProcedure(storedProcedure, schema, paramsData) {
         if (this.handleErrors()) {
             return;
         }
