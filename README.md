@@ -16,6 +16,29 @@ $ cd your_project
 $ npm install --save rest-mssql-nodejs
 ```
 
+### Accepted data types
+
+  - tinyint
+  - smallint
+  - int
+  - bigint
+  - decimal
+  - numeric
+  - float
+  - money
+  - smallmoney
+  - datetime
+  - date
+  - time
+  - varchar
+  - char
+  - text
+  - nchar
+  - nvarchar
+  - ntext
+  - blob
+  - bit
+
 ### Methods
 | executeQuery (queryString, paramsData) |                                                                       |                                                              |
 |----------------------------------------------|-----------------------------------------------------------------------|--------------------------------------------------------------|
