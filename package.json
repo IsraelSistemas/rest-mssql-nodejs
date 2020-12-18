@@ -1,6 +1,6 @@
 {
   "name": "rest-mssql-nodejs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Allows rest mssql queries and stored procedures easier and faster",
   "main": "src/index.js",
   "scripts": {
