@@ -1,5 +1,7 @@
 # rest-mssql-nodejs
 
+The purpose of this library is to simplify the use of the mssql package with only two methods.
+
 # Features!
 
   - Create an instance of MS SQL 
