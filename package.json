@@ -1,6 +1,6 @@
 {
   "name": "rest-mssql-nodejs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Allows rest mssql queries and stored procedures easier and faster",
   "main": "src/index.js",
   "scripts": {
@@ -10,7 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/IsraelSistemas/rest-mssql-nodejs.git"
   },
-  "author": "Israel Sistemas",
+  "author": {
+    "name": "Fernando Montoya",    
+    "email": "israelsistemas1@gmail.com",
+    "url": "https://www.youtube.com/user/IsraelSistemas1"
+  },  
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/IsraelSistemas/rest-mssql-nodejs/issues"
