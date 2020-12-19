@@ -29,5 +29,15 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.6"
   },
-  "keywords": []
+  "keywords": [
+    "database",
+    "rest-mssql-nodejs
+    "mssql",
+    "msnodesql",
+    "sqlserver",
+    "node-sqlserver",
+    "node-mssql",
+    "wrap-mssql",
+    "wrap"
+  ]
 }
