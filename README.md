@@ -1,6 +1,6 @@
 # rest-mssql-nodejs
 
-The purpose of this library is to simplify the use of the mssql package with only two methods.
+The purpose of this library is behave as wrap of the mssql package with only two methods to simplify it.
 
 # Features!
 
