@@ -15,7 +15,8 @@ class sqlRest {
                 user: this.#dbConfig.user,
                 password: this.#dbConfig.password,
                 server: this.#dbConfig.server,
-                database: this.#dbConfig.database,
+                database: this.#dbConfig.database
+                port: this.#dbConfig.port ? this.#dbConfig.port : 1433,
                 options: {
                     enableArithAbort: true,
                     encrypt: false
