@@ -44,27 +44,29 @@ class sqlRest {
         }
     }
 
-    executeQuery = async (queryString, paramsData) => {
+    executeQuery = async (queryString, paramsData = []) => {
         if (this.#handleErrors()) {
             return;
         }
 
         const request = await this.#pool.request();        
 
-        for (let param of paramsData) {
-            try {
-                request.input(param.name, this.#getParamProcedureType(param.type), param.value);
-            } catch(e) {
-                return this.#handleResponse(null, {
-                    stack: e,
-                    message: `The data type ${param.type} is not valid`
-                });
+        if (Array.isArray(paramsData)) {
+            for (let param of paramsData) {
+                try {
+                    request.input(param.name, this.#getParamProcedureType(param.type), param.value);
+                } catch(e) {
+                    return this.#handleResponse(null, {
+                        stack: e,
+                        message: `The data type ${param.type} is not valid`
+                    });
+                }
             }
         }
 
         return await request.query(queryString).then(res => {
             return this.#handleResponse(res.recordsets);           
-        }).catch(err => {
+        }).catch(err => {            
             return this.#handleResponse(null, err);            
         });
     }
@@ -256,9 +258,10 @@ class sqlRest {
             success: !error ? true: false,
             error: error ? true : false,
             data: !error ? data : null,
-            NUMREGISTROS: (data.length > 0 && data[0].NUMREGISTROS) ? data[0].NUMREGISTROS : 0
+            itemsByPage: (!error && data.length > 0 && data[0].itemsByPage) ? data[0].itemsByPage : 0
         };
 
+        
         if (error) {
             response.errorDetail = error.stack;
             response.message = error.message;
