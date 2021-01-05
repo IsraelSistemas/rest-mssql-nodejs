@@ -37,7 +37,7 @@ class sqlRest {
                     return;
                 }
     
-                console.log(`Connection succesfully to the server ${this.#dbConfig.server}`);
+                console.log(`Connection succesfully to the server ${this.#dbConfig.database}`);
             });                
         } catch (err) {
             console.log(err);
