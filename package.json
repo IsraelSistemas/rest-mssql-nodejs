@@ -1,7 +1,7 @@
 {
   "name": "rest-mssql-nodejs",
   "version": "1.0.7",
-  "description": "Allows rest mssql queries and stored procedures easier and faster",
+  "description": "Makes a wrap of mssql package and allows rest mssql queries and stored procedures easier and faster",
   "main": "src/index.js",
   "scripts": {
     "dev": "nodemon"
@@ -29,5 +29,15 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.6"
   },
-  "keywords": []
+  "keywords": [
+    "database",
+    "rest-mssql-nodejs",
+    "mssql",
+    "msnodesql",
+    "sqlserver",
+    "node-sqlserver",
+    "node-mssql",
+    "wrap-mssql",
+    "wrap"
+  ]
 }

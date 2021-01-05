@@ -1,6 +1,6 @@
 # rest-mssql-nodejs
 
-The purpose of this library is to simplify the use of the mssql package with only two methods.
+The purpose of this library is behave as wrap of the mssql package with only two methods to simplify it.
 
 # Features!
 
@@ -45,7 +45,7 @@ $ npm install --save rest-mssql-nodejs
 ### Methods
 | executeQuery (queryString, paramsData) |                                                                       |                                                              |
 |----------------------------------------------|-----------------------------------------------------------------------|--------------------------------------------------------------|
-| Parameter1: queryString                      | Query is going to be executed                                         | Example: select * from your_table                      |
+| Parameter1: queryString                      | Query is going to be executed                                         | Example without parameter: select * from your_table;...; Example with parameter: select * from your_table where id = @id                      |
 | Parameter2: paramsData (optional)      | Array of objects with the property: value is going to fill the params | Example: [{ name: 'id', type: 'Int', value: 1 }] |
 
 
