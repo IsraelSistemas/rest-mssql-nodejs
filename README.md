@@ -68,7 +68,8 @@ const rest = new (require('rest-mssql-nodejs'))({
     user: 'db_username',
     password: 'db_password',
     server: 'localhost', // replace this with your IP Server
-    database: 'db_name'
+    database: 'db_name',
+    port: 1433 // this is optional, by default takes the port 1433
 });
 
 module.exports = {
