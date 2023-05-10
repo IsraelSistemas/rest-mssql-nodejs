@@ -78,15 +78,20 @@ class sqlRest {
 
         const request = await this.#pool.request();        
         const paramsProcedure = await this.#getProcedureParams(schema, storedProcedure);
-
+        let outputResult=null;
         for (let param in paramsData) {
             try {
                 if (!paramsProcedure.data[param]) {
                     throw `Error in your stored procedure ${schema}.${storedProcedure}`;
                 }
-
                 paramsProcedure.data[param].value = paramsData[param];
-                request.input(paramsProcedure.data[param].name, paramsProcedure.data[param].type, paramsProcedure.data[param].value);
+                if(paramsData[param].direction ==="output"){
+                    request.output(paramsProcedure.data[param].name, paramsProcedure.data[param].type);
+                    outputResult= true
+                }else{
+                    request.input(paramsProcedure.data[param].name, paramsProcedure.data[param].type, paramsProcedure.data[param].value);
+                }
+
             } catch (e) {
                 return this.#handleResponse(null, {
                     stack: e,
@@ -94,9 +99,9 @@ class sqlRest {
                 });
             }
         }        
-                
+       
         return request.execute(`${schema}.${storedProcedure}`).then(res => {
-            return this.#handleResponse(res.recordsets);
+            return  this.#handleResponse( outputResult ? res.output : res.recordsets);
         }).catch(err => {   
             return this.#handleResponse(null, err);            
         });
