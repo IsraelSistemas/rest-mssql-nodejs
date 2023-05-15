@@ -118,6 +118,16 @@ const result = await rest.executeStoredProcedure('spName', null, {
 
 //print the result
 console.log("STORED PROCEDURE RESULT: ", result.data);
+
+// how to execute a stored procedure with output parameters
+const result = await rest.executeStoredProcedure('spName', null, {
+    id: 1,
+    name :'name',
+    result : {direction:'output' }
+});
+
+//print the result
+console.log("STORED PROCEDURE OUTPUT RESULT: ", result.data);
 ```
 
 License
